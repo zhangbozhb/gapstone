@@ -4,7 +4,7 @@ gapstone
 Gapstone is a Go binding for the Capstone disassembly library.
 
 ## CURRENT UPSTREAM VERSION: 4.0.1
-[![Build Status](https://travis-ci.org/bnagy/gapstone.svg?branch=master)](https://travis-ci.org/bnagy/gapstone)
+[![Build Status](https://travis-ci.org/knightsc/gapstone.svg?branch=master)](https://travis-ci.org/knightsc/gapstone)
 
 (head over to the next branch for the newest stuff)
 
@@ -52,12 +52,12 @@ or http://www.capstone-engine.org
 
 Then, assuming you have set up your Go environment according to the docs, just:
 ```bash
-go get -u github.com/bnagy/gapstone
+go get -u github.com/knightsc/gapstone
 ```
 
 Tests are provided. You should probably run them.
 ```
-cd $GOPATH/src/github.com/bnagy/gapstone
+cd $GOPATH/src/github.com/knightsc/gapstone
 go test
 ```
 
@@ -71,7 +71,7 @@ Here's "Hello World":
 package main
 
 import (
-    "github.com/bnagy/gapstone"
+    "github.com/knightsc/gapstone"
     "log"
 )
 
@@ -113,18 +113,9 @@ func main() {
 }
 ```
 
-Autodoc is available at http://godoc.org/github.com/bnagy/gapstone
+Autodoc is available at http://godoc.org/github.com/knightsc/gapstone
 
 Contributing
 ----
 
 If you feel like chipping in, especially with better tests or examples, fork and send me a pull req.
-
-
-```
-Library Author: Nguyen Anh Quynh
-Binding Author: Ben Nagy
-License: BSD style - see LICENSE file for details
-
-(c) 2013 COSEINC. All Rights Reserved.
-```
