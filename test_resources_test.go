@@ -277,30 +277,27 @@ var basicTests = platforms{
 		basicArm64Code,
 		"ARM-64",
 	},
-	/*
-		Temporarily disabled. See https://github.com/aquynh/capstone/pull/1361
-		platform{
-			CS_ARCH_PPC,
-			CS_MODE_BIG_ENDIAN,
-			[]option{{CS_OPT_DETAIL, CS_OPT_ON}},
-			basicPPCCode,
-			"PPC-64",
-		},
-		platform{
-			CS_ARCH_PPC,
-			CS_MODE_BIG_ENDIAN,
-			[]option{{CS_OPT_DETAIL, CS_OPT_ON}, {CS_OPT_SYNTAX, CS_OPT_SYNTAX_NOREGNAME}},
-			basicPPCCode,
-			"PPC-64, print register with number only",
-		},
-		platform{
-			CS_ARCH_PPC,
-			CS_MODE_BIG_ENDIAN + CS_MODE_QPX,
-			[]option{{CS_OPT_DETAIL, CS_OPT_ON}},
-			basicPPCCode2,
-			"PPC-64 + QPX",
-		},
-	*/
+	platform{
+		CS_ARCH_PPC,
+		CS_MODE_BIG_ENDIAN,
+		[]option{{CS_OPT_DETAIL, CS_OPT_ON}},
+		basicPPCCode,
+		"PPC-64",
+	},
+	platform{
+		CS_ARCH_PPC,
+		CS_MODE_BIG_ENDIAN,
+		[]option{{CS_OPT_DETAIL, CS_OPT_ON}, {CS_OPT_SYNTAX, CS_OPT_SYNTAX_NOREGNAME}},
+		basicPPCCode,
+		"PPC-64, print register with number only",
+	},
+	platform{
+		CS_ARCH_PPC,
+		CS_MODE_BIG_ENDIAN + CS_MODE_QPX,
+		[]option{{CS_OPT_DETAIL, CS_OPT_ON}},
+		basicPPCCode2,
+		"PPC-64 + QPX",
+	},
 	platform{
 		CS_ARCH_SPARC,
 		CS_MODE_BIG_ENDIAN,
@@ -468,23 +465,20 @@ var detailTests = platforms{
 		detailArm64Code,
 		"ARM-64",
 	},
-	/*
-		Temporarily disabled. See https://github.com/aquynh/capstone/pull/1361
-		platform{
-			CS_ARCH_PPC,
-			CS_MODE_BIG_ENDIAN,
-			[]option{{CS_OPT_DETAIL, CS_OPT_ON}},
-			detailPPCCode,
-			"PPC-64",
-		},
-		platform{
-			CS_ARCH_PPC,
-			CS_MODE_BIG_ENDIAN + CS_MODE_QPX,
-			[]option{{CS_OPT_DETAIL, CS_OPT_ON}},
-			detailPPCCode2,
-			"PPC-64 + QPX",
-		},
-	*/
+	platform{
+		CS_ARCH_PPC,
+		CS_MODE_BIG_ENDIAN,
+		[]option{{CS_OPT_DETAIL, CS_OPT_ON}},
+		detailPPCCode,
+		"PPC-64",
+	},
+	platform{
+		CS_ARCH_PPC,
+		CS_MODE_BIG_ENDIAN + CS_MODE_QPX,
+		[]option{{CS_OPT_DETAIL, CS_OPT_ON}},
+		detailPPCCode2,
+		"PPC-64 + QPX",
+	},
 	platform{
 		CS_ARCH_SPARC,
 		CS_MODE_BIG_ENDIAN,
