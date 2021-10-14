@@ -222,6 +222,47 @@ Disasm:
 0x1044:
 
 ****************
+Platform: PPC-64
+Code: 0x80 0x20 0x00 0x00 0x80 0x3f 0x00 0x00 0x10 0x43 0x23 0x0e 0xd0 0x44 0x00 0x80 0x4c 0x43 0x22 0x02 0x2d 0x03 0x00 0x80 0x7c 0x43 0x20 0x14 0x7c 0x43 0x20 0x93 0x4f 0x20 0x00 0x21 0x4c 0xc8 0x00 0x21 0x40 0x82 0x00 0x14 
+Disasm:
+0x1000:	lwz		r1, 0(0) // insn-ID: 354, insn-mnem: lwz
+0x1004:	lwz		r1, 0(r31) // insn-ID: 354, insn-mnem: lwz
+0x1008:	vpkpx		v2, v3, v4 // insn-ID: 722, insn-mnem: vpkpx
+	This instruction belongs to groups: altivec 
+0x100c:	stfs		f2, 0x80(r4) // insn-ID: 573, insn-mnem: stfs
+0x1010:	crand		2, 3, 4 // insn-ID: 55, insn-mnem: crand
+0x1014:	cmpwi		cr2, r3, 0x80 // insn-ID: 50, insn-mnem: cmpwi
+0x1018:	addc		r2, r3, r4 // insn-ID: 2, insn-mnem: addc
+	Implicit registers modified: ca 
+0x101c:	mulhd.		r2, r3, r4 // insn-ID: 394, insn-mnem: mulhd
+	Implicit registers modified: cr0 
+0x1020:	bdnzlrl+		 // insn-ID: 30, insn-mnem: bdnzlrl
+	Implicit registers read: ctr lr rm 
+	Implicit registers modified: ctr 
+0x1024:	bgelrl-		cr2 // insn-ID: 21, insn-mnem: bclrl
+	Implicit registers read: ctr lr rm 
+	Implicit registers modified: lr ctr 
+0x1028:	bne		0x103c // insn-ID: 16, insn-mnem: bc
+	Implicit registers read: ctr rm 
+	Implicit registers modified: ctr 
+0x102c:
+
+****************
+Platform: PPC-64 + QPX
+Code: 0x10 0x60 0x2a 0x10 0x10 0x64 0x28 0x88 0x7c 0x4a 0x5d 0x0f 
+Disasm:
+0x1000:	qvfabs		q3, q5 // insn-ID: 413, insn-mnem: qvfabs
+	Implicit registers read: rm 
+	This instruction belongs to groups: qpx 
+0x1004:	qvfand		q3, q4, q5 // insn-ID: 1098, insn-mnem: qvfand
+	Implicit registers read: rm 
+	This instruction belongs to groups: qpx 
+0x1008:	qvstfsxa		q2, r10, r11 // insn-ID: 526, insn-mnem: qvstfsxa
+	Implicit registers read: rm 
+	This instruction belongs to groups: qpx 
+0x100c:
+
+****************
 Platform: Sparc
 Code: 0x80 0xa0 0x40 0x02 0x85 0xc2 0x60 0x08 0x85 0xe8 0x20 0x01 0x81 0xe8 0x00 0x00 0x90 0x10 0x20 0x01 0xd5 0xf6 0x10 0x16 0x21 0x00 0x00 0x0a 0x86 0x00 0x40 0x02 0x01 0x00 0x00 0x00 0x12 0xbf 0xff 0xff 0x10 0xbf 0xff 0xff 0xa0 0x02 0x00 0x09 0x0d 0xbf 0xff 0xff 0xd4 0x20 0x60 0x00 0xd4 0x4e 0x00 0x16 0x2a 0xc2 0x80 0x03 
 Disasm:
@@ -340,34 +381,34 @@ Disasm:
 0x1003:	orcc		#85 // insn-ID: 243, insn-mnem: orcc
 	Implicit registers read: cc 
 	Implicit registers modified: cc 
-0x1005:	exg		d,x // insn-ID: 153, insn-mnem: exg
+0x1005:	exg		d, x // insn-ID: 153, insn-mnem: exg
 	Implicit registers read: d x 
 	Implicit registers modified: d x 
-0x1007:	bls		$0FF2 // insn-ID: 58, insn-mnem: bls
+0x1007:	bls		$0ff2 // insn-ID: 58, insn-mnem: bls
 	Implicit registers read: cc 
 	This instruction belongs to groups: branch_relative jump 
-0x1009:	leay		6,x // insn-ID: 209, insn-mnem: leay
+0x1009:	leay		6, x // insn-ID: 209, insn-mnem: leay
 	Implicit registers read: cc x 
 	Implicit registers modified: cc y 
-0x100b:	pshs		cc,b,x,u // insn-ID: 251, insn-mnem: pshs
+0x100b:	pshs		cc, b, x, u // insn-ID: 251, insn-mnem: pshs
 	Implicit registers read: s cc b x u 
 	Implicit registers modified: s 
-0x100d:	lda		,x++ // insn-ID: 190, insn-mnem: lda
+0x100d:	lda		, x++ // insn-ID: 190, insn-mnem: lda
 	Implicit registers read: cc x 
 	Implicit registers modified: cc a x 
-0x100f:	sta		32767,x // insn-ID: 298, insn-mnem: sta
+0x100f:	sta		32767, x // insn-ID: 298, insn-mnem: sta
 	Implicit registers read: cc a x 
 	Implicit registers modified: cc 
-0x1013:	lda		[$2017,pcR] // insn-ID: 190, insn-mnem: lda
+0x1013:	lda		[$2017, pcr] // insn-ID: 190, insn-mnem: lda
 	Implicit registers read: cc pc 
 	Implicit registers modified: cc a 
-0x1017:	sta		[,x++] // insn-ID: 298, insn-mnem: sta
+0x1017:	sta		[, x++] // insn-ID: 298, insn-mnem: sta
 	Implicit registers read: cc a x 
 	Implicit registers modified: cc x 
 0x1019:	lda		[$1000] // insn-ID: 190, insn-mnem: lda
 	Implicit registers read: cc 
 	Implicit registers modified: cc a 
-0x101d:	cmps		[4096,x] // insn-ID: 98, insn-mnem: cmps
+0x101d:	cmps		[4096, x] // insn-ID: 98, insn-mnem: cmps
 	Implicit registers read: cc s x 
 	Implicit registers modified: cc 
 0x1022:	rts		 // insn-ID: 285, insn-mnem: rts

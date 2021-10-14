@@ -8,8 +8,8 @@ try reading the *_test.go files.
     (c) 2013 COSEINC. All Rights Reserved.
 
     THIS FILE WAS AUTO-GENERATED -- DO NOT EDIT!
-	Command: ./genconst /Users/scottknight/work/capstone/bindings/python/capstone/
-	2019-02-02T13:26:27-05:00
+	Command: ./genconst ../capstone/bindings/python/capstone/
+	2021-10-14T08:50:33-04:00
 
 */
 
@@ -23,7 +23,6 @@ package gapstone
 import "C"
 
 // For Capstone Engine. AUTO-GENERATED FILE, DO NOT EDIT [arm_const.py]
-// ARM shift type
 const (
 	ARM_SFT_INVALID = C.ARM_SFT_INVALID
 	ARM_SFT_ASR     = C.ARM_SFT_ASR
@@ -38,7 +37,6 @@ const (
 	ARM_SFT_RRX_REG = C.ARM_SFT_RRX_REG
 )
 
-// ARM condition code
 const (
 	ARM_CC_INVALID = C.ARM_CC_INVALID
 	ARM_CC_EQ      = C.ARM_CC_EQ
@@ -58,7 +56,6 @@ const (
 	ARM_CC_AL      = C.ARM_CC_AL
 )
 
-// Special registers for MSR
 const (
 	ARM_SYSREG_INVALID      = C.ARM_SYSREG_INVALID
 	ARM_SYSREG_SPSR_C       = C.ARM_SYSREG_SPSR_C
@@ -130,8 +127,6 @@ const (
 	ARM_SYSREG_SPSR_HYP     = C.ARM_SYSREG_SPSR_HYP
 )
 
-// The memory barrier constants map directly to the 4-bit encoding of
-// the option field for Memory Barrier operations.
 const (
 	ARM_MB_INVALID     = C.ARM_MB_INVALID
 	ARM_MB_RESERVED_0  = C.ARM_MB_RESERVED_0
@@ -152,7 +147,6 @@ const (
 	ARM_MB_SY          = C.ARM_MB_SY
 )
 
-// Operand type for instruction's operands
 const (
 	ARM_OP_INVALID = C.ARM_OP_INVALID
 	ARM_OP_REG     = C.ARM_OP_REG
@@ -165,7 +159,6 @@ const (
 	ARM_OP_SYSREG  = C.ARM_OP_SYSREG
 )
 
-// Operand type for SETEND instruction
 const (
 	ARM_SETEND_INVALID = C.ARM_SETEND_INVALID
 	ARM_SETEND_BE      = C.ARM_SETEND_BE
@@ -178,7 +171,6 @@ const (
 	ARM_CPSMODE_ID      = C.ARM_CPSMODE_ID
 )
 
-// Operand type for SETEND instruction
 const (
 	ARM_CPSFLAG_INVALID = C.ARM_CPSFLAG_INVALID
 	ARM_CPSFLAG_F       = C.ARM_CPSFLAG_F
@@ -187,7 +179,6 @@ const (
 	ARM_CPSFLAG_NONE    = C.ARM_CPSFLAG_NONE
 )
 
-// Data type for elements of vector instructions.
 const (
 	ARM_VECTORDATA_INVALID = C.ARM_VECTORDATA_INVALID
 	ARM_VECTORDATA_I8      = C.ARM_VECTORDATA_I8
@@ -229,7 +220,6 @@ const (
 	ARM_VECTORDATA_F64U32  = C.ARM_VECTORDATA_F64U32
 )
 
-// ARM registers
 const (
 	ARM_REG_INVALID    = C.ARM_REG_INVALID
 	ARM_REG_APSR       = C.ARM_REG_APSR
@@ -343,20 +333,15 @@ const (
 	ARM_REG_S30        = C.ARM_REG_S30
 	ARM_REG_S31        = C.ARM_REG_S31
 	ARM_REG_ENDING     = C.ARM_REG_ENDING
+	ARM_REG_R13        = C.ARM_REG_R13
+	ARM_REG_R14        = C.ARM_REG_R14
+	ARM_REG_R15        = C.ARM_REG_R15
+	ARM_REG_SB         = C.ARM_REG_SB
+	ARM_REG_SL         = C.ARM_REG_SL
+	ARM_REG_FP         = C.ARM_REG_FP
+	ARM_REG_IP         = C.ARM_REG_IP
 )
 
-// alias registers
-const (
-	ARM_REG_R13 = C.ARM_REG_R13
-	ARM_REG_R14 = C.ARM_REG_R14
-	ARM_REG_R15 = C.ARM_REG_R15
-	ARM_REG_SB  = C.ARM_REG_SB
-	ARM_REG_SL  = C.ARM_REG_SL
-	ARM_REG_FP  = C.ARM_REG_FP
-	ARM_REG_IP  = C.ARM_REG_IP
-)
-
-// ARM instruction
 const (
 	ARM_INS_INVALID   = C.ARM_INS_INVALID
 	ARM_INS_ADC       = C.ARM_INS_ADC
@@ -794,53 +779,44 @@ const (
 	ARM_INS_ENDING    = C.ARM_INS_ENDING
 )
 
-// Group of ARM instructions
 const (
-	ARM_GRP_INVALID = C.ARM_GRP_INVALID
-)
-
-// Generic groups
-const (
+	ARM_GRP_INVALID         = C.ARM_GRP_INVALID
 	ARM_GRP_JUMP            = C.ARM_GRP_JUMP
 	ARM_GRP_CALL            = C.ARM_GRP_CALL
 	ARM_GRP_INT             = C.ARM_GRP_INT
 	ARM_GRP_PRIVILEGE       = C.ARM_GRP_PRIVILEGE
 	ARM_GRP_BRANCH_RELATIVE = C.ARM_GRP_BRANCH_RELATIVE
-)
-
-// Architecture-specific groups
-const (
-	ARM_GRP_CRYPTO         = C.ARM_GRP_CRYPTO
-	ARM_GRP_DATABARRIER    = C.ARM_GRP_DATABARRIER
-	ARM_GRP_DIVIDE         = C.ARM_GRP_DIVIDE
-	ARM_GRP_FPARMV8        = C.ARM_GRP_FPARMV8
-	ARM_GRP_MULTPRO        = C.ARM_GRP_MULTPRO
-	ARM_GRP_NEON           = C.ARM_GRP_NEON
-	ARM_GRP_T2EXTRACTPACK  = C.ARM_GRP_T2EXTRACTPACK
-	ARM_GRP_THUMB2DSP      = C.ARM_GRP_THUMB2DSP
-	ARM_GRP_TRUSTZONE      = C.ARM_GRP_TRUSTZONE
-	ARM_GRP_V4T            = C.ARM_GRP_V4T
-	ARM_GRP_V5T            = C.ARM_GRP_V5T
-	ARM_GRP_V5TE           = C.ARM_GRP_V5TE
-	ARM_GRP_V6             = C.ARM_GRP_V6
-	ARM_GRP_V6T2           = C.ARM_GRP_V6T2
-	ARM_GRP_V7             = C.ARM_GRP_V7
-	ARM_GRP_V8             = C.ARM_GRP_V8
-	ARM_GRP_VFP2           = C.ARM_GRP_VFP2
-	ARM_GRP_VFP3           = C.ARM_GRP_VFP3
-	ARM_GRP_VFP4           = C.ARM_GRP_VFP4
-	ARM_GRP_ARM            = C.ARM_GRP_ARM
-	ARM_GRP_MCLASS         = C.ARM_GRP_MCLASS
-	ARM_GRP_NOTMCLASS      = C.ARM_GRP_NOTMCLASS
-	ARM_GRP_THUMB          = C.ARM_GRP_THUMB
-	ARM_GRP_THUMB1ONLY     = C.ARM_GRP_THUMB1ONLY
-	ARM_GRP_THUMB2         = C.ARM_GRP_THUMB2
-	ARM_GRP_PREV8          = C.ARM_GRP_PREV8
-	ARM_GRP_FPVMLX         = C.ARM_GRP_FPVMLX
-	ARM_GRP_MULOPS         = C.ARM_GRP_MULOPS
-	ARM_GRP_CRC            = C.ARM_GRP_CRC
-	ARM_GRP_DPVFP          = C.ARM_GRP_DPVFP
-	ARM_GRP_V6M            = C.ARM_GRP_V6M
-	ARM_GRP_VIRTUALIZATION = C.ARM_GRP_VIRTUALIZATION
-	ARM_GRP_ENDING         = C.ARM_GRP_ENDING
+	ARM_GRP_CRYPTO          = C.ARM_GRP_CRYPTO
+	ARM_GRP_DATABARRIER     = C.ARM_GRP_DATABARRIER
+	ARM_GRP_DIVIDE          = C.ARM_GRP_DIVIDE
+	ARM_GRP_FPARMV8         = C.ARM_GRP_FPARMV8
+	ARM_GRP_MULTPRO         = C.ARM_GRP_MULTPRO
+	ARM_GRP_NEON            = C.ARM_GRP_NEON
+	ARM_GRP_T2EXTRACTPACK   = C.ARM_GRP_T2EXTRACTPACK
+	ARM_GRP_THUMB2DSP       = C.ARM_GRP_THUMB2DSP
+	ARM_GRP_TRUSTZONE       = C.ARM_GRP_TRUSTZONE
+	ARM_GRP_V4T             = C.ARM_GRP_V4T
+	ARM_GRP_V5T             = C.ARM_GRP_V5T
+	ARM_GRP_V5TE            = C.ARM_GRP_V5TE
+	ARM_GRP_V6              = C.ARM_GRP_V6
+	ARM_GRP_V6T2            = C.ARM_GRP_V6T2
+	ARM_GRP_V7              = C.ARM_GRP_V7
+	ARM_GRP_V8              = C.ARM_GRP_V8
+	ARM_GRP_VFP2            = C.ARM_GRP_VFP2
+	ARM_GRP_VFP3            = C.ARM_GRP_VFP3
+	ARM_GRP_VFP4            = C.ARM_GRP_VFP4
+	ARM_GRP_ARM             = C.ARM_GRP_ARM
+	ARM_GRP_MCLASS          = C.ARM_GRP_MCLASS
+	ARM_GRP_NOTMCLASS       = C.ARM_GRP_NOTMCLASS
+	ARM_GRP_THUMB           = C.ARM_GRP_THUMB
+	ARM_GRP_THUMB1ONLY      = C.ARM_GRP_THUMB1ONLY
+	ARM_GRP_THUMB2          = C.ARM_GRP_THUMB2
+	ARM_GRP_PREV8           = C.ARM_GRP_PREV8
+	ARM_GRP_FPVMLX          = C.ARM_GRP_FPVMLX
+	ARM_GRP_MULOPS          = C.ARM_GRP_MULOPS
+	ARM_GRP_CRC             = C.ARM_GRP_CRC
+	ARM_GRP_DPVFP           = C.ARM_GRP_DPVFP
+	ARM_GRP_V6M             = C.ARM_GRP_V6M
+	ARM_GRP_VIRTUALIZATION  = C.ARM_GRP_VIRTUALIZATION
+	ARM_GRP_ENDING          = C.ARM_GRP_ENDING
 )
