@@ -350,6 +350,7 @@ Disasm:
 			operands[0].mem.base: REG = eax
 			operands[0].mem.disp: 0x123
 		operands[0].size: 2
+		operands[0].access: READ
 	Registers read: eax
 
 0x1036:	call	0x1107
@@ -631,6 +632,7 @@ Disasm:
 			operands[0].mem.base: REG = eax
 			operands[0].mem.disp: 0x123
 		operands[0].size: 4
+		operands[0].access: READ
 	Registers read: eax
 
 0x1034:	calll	0xdeadcf18
@@ -914,6 +916,7 @@ Disasm:
 			operands[0].mem.base: REG = eax
 			operands[0].mem.disp: 0x123
 		operands[0].size: 4
+		operands[0].access: READ
 	Registers read: eax
 
 0x1034:	call	0xdeadcf18
@@ -1028,6 +1031,7 @@ Disasm:
 			operands[0].mem.base: REG = rip
 			operands[0].mem.disp: 0x123
 		operands[0].size: 8
+		operands[0].access: READ
 	Registers read: rip
 
 0x1013:	call	0xffffffffdeadcef7

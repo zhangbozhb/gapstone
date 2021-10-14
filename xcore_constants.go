@@ -8,8 +8,8 @@ try reading the *_test.go files.
     (c) 2013 COSEINC. All Rights Reserved.
 
     THIS FILE WAS AUTO-GENERATED -- DO NOT EDIT!
-	Command: ./genconst /Users/scottknight/work/capstone/bindings/python/capstone/
-	2019-02-02T13:26:27-05:00
+	Command: ./genconst ../capstone/bindings/python/capstone/
+	2021-10-14T08:50:33-04:00
 
 */
 
@@ -23,7 +23,6 @@ package gapstone
 import "C"
 
 // For Capstone Engine. AUTO-GENERATED FILE, DO NOT EDIT [xcore_const.py]
-// Operand type for instruction's operands
 const (
 	XCORE_OP_INVALID = C.XCORE_OP_INVALID
 	XCORE_OP_REG     = C.XCORE_OP_REG
@@ -31,7 +30,6 @@ const (
 	XCORE_OP_MEM     = C.XCORE_OP_MEM
 )
 
-// XCore registers
 const (
 	XCORE_REG_INVALID = C.XCORE_REG_INVALID
 	XCORE_REG_CP      = C.XCORE_REG_CP
@@ -50,23 +48,18 @@ const (
 	XCORE_REG_R9      = C.XCORE_REG_R9
 	XCORE_REG_R10     = C.XCORE_REG_R10
 	XCORE_REG_R11     = C.XCORE_REG_R11
+	XCORE_REG_PC      = C.XCORE_REG_PC
+	XCORE_REG_SCP     = C.XCORE_REG_SCP
+	XCORE_REG_SSR     = C.XCORE_REG_SSR
+	XCORE_REG_ET      = C.XCORE_REG_ET
+	XCORE_REG_ED      = C.XCORE_REG_ED
+	XCORE_REG_SED     = C.XCORE_REG_SED
+	XCORE_REG_KEP     = C.XCORE_REG_KEP
+	XCORE_REG_KSP     = C.XCORE_REG_KSP
+	XCORE_REG_ID      = C.XCORE_REG_ID
+	XCORE_REG_ENDING  = C.XCORE_REG_ENDING
 )
 
-// pseudo registers
-const (
-	XCORE_REG_PC     = C.XCORE_REG_PC
-	XCORE_REG_SCP    = C.XCORE_REG_SCP
-	XCORE_REG_SSR    = C.XCORE_REG_SSR
-	XCORE_REG_ET     = C.XCORE_REG_ET
-	XCORE_REG_ED     = C.XCORE_REG_ED
-	XCORE_REG_SED    = C.XCORE_REG_SED
-	XCORE_REG_KEP    = C.XCORE_REG_KEP
-	XCORE_REG_KSP    = C.XCORE_REG_KSP
-	XCORE_REG_ID     = C.XCORE_REG_ID
-	XCORE_REG_ENDING = C.XCORE_REG_ENDING
-)
-
-// XCore instruction
 const (
 	XCORE_INS_INVALID = C.XCORE_INS_INVALID
 	XCORE_INS_ADD     = C.XCORE_INS_ADD
@@ -192,13 +185,8 @@ const (
 	XCORE_INS_ENDING  = C.XCORE_INS_ENDING
 )
 
-// Group of XCore instructions
 const (
 	XCORE_GRP_INVALID = C.XCORE_GRP_INVALID
-)
-
-// Generic groups
-const (
-	XCORE_GRP_JUMP   = C.XCORE_GRP_JUMP
-	XCORE_GRP_ENDING = C.XCORE_GRP_ENDING
+	XCORE_GRP_JUMP    = C.XCORE_GRP_JUMP
+	XCORE_GRP_ENDING  = C.XCORE_GRP_ENDING
 )

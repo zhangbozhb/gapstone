@@ -8,8 +8,8 @@ try reading the *_test.go files.
     (c) 2013 COSEINC. All Rights Reserved.
 
     THIS FILE WAS AUTO-GENERATED -- DO NOT EDIT!
-	Command: ./genconst /Users/scottknight/work/capstone/bindings/python/capstone/
-	2019-02-02T13:26:27-05:00
+	Command: ./genconst ../capstone/bindings/python/capstone/
+	2021-10-14T08:50:33-04:00
 
 */
 
@@ -23,13 +23,8 @@ package gapstone
 import "C"
 
 // For Capstone Engine. AUTO-GENERATED FILE, DO NOT EDIT [sparc_const.py]
-// Enums corresponding to Sparc condition codes, both icc's and fcc's.
 const (
 	SPARC_CC_INVALID = C.SPARC_CC_INVALID
-)
-
-// Integer condition codes
-const (
 	SPARC_CC_ICC_A   = C.SPARC_CC_ICC_A
 	SPARC_CC_ICC_N   = C.SPARC_CC_ICC_N
 	SPARC_CC_ICC_NE  = C.SPARC_CC_ICC_NE
@@ -46,10 +41,6 @@ const (
 	SPARC_CC_ICC_NEG = C.SPARC_CC_ICC_NEG
 	SPARC_CC_ICC_VC  = C.SPARC_CC_ICC_VC
 	SPARC_CC_ICC_VS  = C.SPARC_CC_ICC_VS
-)
-
-// Floating condition codes
-const (
 	SPARC_CC_FCC_A   = C.SPARC_CC_FCC_A
 	SPARC_CC_FCC_N   = C.SPARC_CC_FCC_N
 	SPARC_CC_FCC_U   = C.SPARC_CC_FCC_U
@@ -68,7 +59,6 @@ const (
 	SPARC_CC_FCC_O   = C.SPARC_CC_FCC_O
 )
 
-// Branch hint
 const (
 	SPARC_HINT_INVALID = C.SPARC_HINT_INVALID
 	SPARC_HINT_A       = C.SPARC_HINT_A
@@ -76,7 +66,6 @@ const (
 	SPARC_HINT_PN      = C.SPARC_HINT_PN
 )
 
-// Operand type for instruction's operands
 const (
 	SPARC_OP_INVALID = C.SPARC_OP_INVALID
 	SPARC_OP_REG     = C.SPARC_OP_REG
@@ -84,7 +73,6 @@ const (
 	SPARC_OP_MEM     = C.SPARC_OP_MEM
 )
 
-// SPARC registers
 const (
 	SPARC_REG_INVALID = C.SPARC_REG_INVALID
 	SPARC_REG_F0      = C.SPARC_REG_F0
@@ -179,7 +167,6 @@ const (
 	SPARC_REG_I6      = C.SPARC_REG_I6
 )
 
-// SPARC instruction
 const (
 	SPARC_INS_INVALID     = C.SPARC_INS_INVALID
 	SPARC_INS_ADDCC       = C.SPARC_INS_ADDCC
@@ -463,18 +450,9 @@ const (
 	SPARC_INS_ENDING      = C.SPARC_INS_ENDING
 )
 
-// Group of SPARC instructions
 const (
-	SPARC_GRP_INVALID = C.SPARC_GRP_INVALID
-)
-
-// Generic groups
-const (
-	SPARC_GRP_JUMP = C.SPARC_GRP_JUMP
-)
-
-// Architecture-specific groups
-const (
+	SPARC_GRP_INVALID  = C.SPARC_GRP_INVALID
+	SPARC_GRP_JUMP     = C.SPARC_GRP_JUMP
 	SPARC_GRP_HARDQUAD = C.SPARC_GRP_HARDQUAD
 	SPARC_GRP_V9       = C.SPARC_GRP_V9
 	SPARC_GRP_VIS      = C.SPARC_GRP_VIS
