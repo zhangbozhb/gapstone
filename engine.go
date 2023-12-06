@@ -242,8 +242,8 @@ func (e *Engine) SetOption(ty, value uint) error {
 }
 
 // Disassemble a []byte full of opcodes.
-//   * address - Address of the first instruction in the given code buffer.
-//   * count - Number of instructions to disassemble, 0 to disassemble the whole []byte
+//   - address - Address of the first instruction in the given code buffer.
+//   - count - Number of instructions to disassemble, 0 to disassemble the whole []byte
 //
 // Underlying C resources are automatically free'd by this function.
 func (e *Engine) Disasm(input []byte, address, count uint64) ([]Instruction, error) {

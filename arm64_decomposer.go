@@ -28,6 +28,7 @@ type Arm64Instruction struct {
 	CC          uint
 	UpdateFlags bool
 	Writeback   bool
+	PostIndex   bool
 	Operands    []Arm64Operand
 }
 
@@ -39,10 +40,10 @@ type Arm64Shifter struct {
 type Arm64Operand struct {
 	VectorIndex int
 	Vas         int
-	Vess        int
 	Shift       Arm64Shifter
 	Ext         uint
 	Type        uint // ARM64_OP_* - determines which field is set below
+	Svcr        int
 	Reg         uint
 	Imm         int64
 	FP          float64
@@ -84,6 +85,7 @@ func fillArm64Header(raw C.cs_insn, insn *Instruction) {
 		CC:          uint(cs_arm64.cc),
 		UpdateFlags: bool(cs_arm64.update_flags),
 		Writeback:   bool(cs_arm64.writeback),
+		PostIndex:   bool(cs_arm64.post_index),
 	}
 
 	// Cast the op_info to a []C.cs_arm6464_op
@@ -106,10 +108,10 @@ func fillArm64Header(raw C.cs_insn, insn *Instruction) {
 				Value: uint(cop.shift.value),
 			},
 			Type:        uint(cop._type),
+			Svcr:        int(cop.svcr),
 			Ext:         uint(cop.ext),
 			VectorIndex: int(cop.vector_index),
 			Vas:         int(cop.vas),
-			Vess:        int(cop.vess),
 			Access:      uint(cop.access),
 		}
 

@@ -31,59 +31,94 @@ const (
 	CS_ARCH_TMS320C64X = C.CS_ARCH_TMS320C64X // TMS320C64x architecture
 	CS_ARCH_M680X      = C.CS_ARCH_M680X      // 680X architecture
 	CS_ARCH_EVM        = C.CS_ARCH_EVM        // Ethereum architecture
+	CS_ARCH_MOS65XX    = C.CS_ARCH_MOS65XX    ///< MOS65XX architecture (including MOS6502)
+	CS_ARCH_WASM       = C.CS_ARCH_WASM       ///< WebAssembly architecture
+	CS_ARCH_BPF        = C.CS_ARCH_BPF        ///< Berkeley Packet Filter architecture (including eBPF)
+	CS_ARCH_RISCV      = C.CS_ARCH_RISCV      ///< RISCV architecture
+	CS_ARCH_SH         = C.CS_ARCH_SH         ///< SH architecture
+	CS_ARCH_TRICORE    = C.CS_ARCH_TRICORE    ///< TriCore architecture
 	CS_ARCH_MAX        = C.CS_ARCH_MAX
 	CS_ARCH_ALL        = C.CS_ARCH_ALL
 )
 
 const (
 	// Engine modes
-	CS_MODE_LITTLE_ENDIAN = C.CS_MODE_LITTLE_ENDIAN // little endian mode (default mode)
-	CS_MODE_ARM           = C.CS_MODE_ARM           // 32-bit ARM
-	CS_MODE_16            = C.CS_MODE_16            // 16-bit mode (X86)
-	CS_MODE_32            = C.CS_MODE_32            // 32-bit mode (X86)
-	CS_MODE_64            = C.CS_MODE_64            // 64-bit mode (X86, PPC)
-	CS_MODE_THUMB         = C.CS_MODE_THUMB         // ARM's Thumb mode, including Thumb-2
-	CS_MODE_MCLASS        = C.CS_MODE_MCLASS        // ARM's Cortex-M series
-	CS_MODE_V8            = C.CS_MODE_V8            // ARMv8 A32 encodings for ARM
-	CS_MODE_MICRO         = C.CS_MODE_MICRO         // MicroMips mode (MIPS)
-	CS_MODE_MIPS3         = C.CS_MODE_MIPS3         // Mips III ISA
-	CS_MODE_MIPS32R6      = C.CS_MODE_MIPS32R6      // Mips32r6 ISA
-	CS_MODE_MIPS2         = C.CS_MODE_MIPS2         // Mips II ISA
-	CS_MODE_V9            = C.CS_MODE_V9            // SparcV9 mode (Sparc)
-	CS_MODE_QPX           = C.CS_MODE_QPX           // Quad Processing eXtensions mode (PPC)
-	CS_MODE_M68K_000      = C.CS_MODE_M68K_000      // M68K 68000 mode
-	CS_MODE_M68K_010      = C.CS_MODE_M68K_010      // M68K 68010 mode
-	CS_MODE_M68K_020      = C.CS_MODE_M68K_020      // M68K 68020 mode
-	CS_MODE_M68K_030      = C.CS_MODE_M68K_030      // M68K 68030 mode
-	CS_MODE_M68K_040      = C.CS_MODE_M68K_040      // M68K 68040 mode
-	CS_MODE_M68K_060      = C.CS_MODE_M68K_060      // M68K 68060 mode
-	CS_MODE_BIG_ENDIAN    = C.CS_MODE_BIG_ENDIAN    // big-endian mode
-	CS_MODE_MIPS32        = C.CS_MODE_MIPS32        // Mips32 ISA (Mips)
-	CS_MODE_MIPS64        = C.CS_MODE_MIPS64        // Mips64 ISA (Mips)
-	CS_MODE_M680X_6301    = C.CS_MODE_M680X_6301    // M680X Hitachi 6301,6303 mode
-	CS_MODE_M680X_6309    = C.CS_MODE_M680X_6309    // M680X Hitachi 6309 mode
-	CS_MODE_M680X_6800    = C.CS_MODE_M680X_6800    // M680X Motorola 6800,6802 mode
-	CS_MODE_M680X_6801    = C.CS_MODE_M680X_6801    // M680X Motorola 6801,6803 mode
-	CS_MODE_M680X_6805    = C.CS_MODE_M680X_6805    // M680X Motorola/Freescale 6805 mode
-	CS_MODE_M680X_6808    = C.CS_MODE_M680X_6808    // M680X Motorola/Freescale/NXP 68HC08 mode
-	CS_MODE_M680X_6809    = C.CS_MODE_M680X_6809    // M680X Motorola 6809 mode
-	CS_MODE_M680X_6811    = C.CS_MODE_M680X_6811    // M680X Motorola/Freescale/NXP 68HC11 mode
-	CS_MODE_M680X_CPU12   = C.CS_MODE_M680X_CPU12   // M680X Motorola/Freescale/NXP CPU12 used on M68HC12/HCS12
-	CS_MODE_M680X_HCS08   = C.CS_MODE_M680X_HCS08   // M680X Freescale/NXP HCS08 mode
-
+	CS_MODE_LITTLE_ENDIAN         = C.CS_MODE_LITTLE_ENDIAN        // little endian mode (default mode)
+	CS_MODE_ARM                   = C.CS_MODE_ARM                  // 32-bit ARM
+	CS_MODE_16                    = C.CS_MODE_16                   // 16-bit mode (X86)
+	CS_MODE_32                    = C.CS_MODE_32                   // 32-bit mode (X86)
+	CS_MODE_64                    = C.CS_MODE_64                   // 64-bit mode (X86, PPC)
+	CS_MODE_THUMB                 = C.CS_MODE_THUMB                // ARM's Thumb mode, including Thumb-2
+	CS_MODE_MCLASS                = C.CS_MODE_MCLASS               // ARM's Cortex-M series
+	CS_MODE_V8                    = C.CS_MODE_V8                   // ARMv8 A32 encodings for ARM
+	CS_MODE_MICRO                 = C.CS_MODE_MICRO                // MicroMips mode (MIPS)
+	CS_MODE_MIPS3                 = C.CS_MODE_MIPS3                // Mips III ISA
+	CS_MODE_MIPS32R6              = C.CS_MODE_MIPS32R6             // Mips32r6 ISA
+	CS_MODE_MIPS2                 = C.CS_MODE_MIPS2                // Mips II ISA
+	CS_MODE_V9                    = C.CS_MODE_V9                   // SparcV9 mode (Sparc)
+	CS_MODE_QPX                   = C.CS_MODE_QPX                  // Quad Processing eXtensions mode (PPC)
+	CS_MODE_SPE                   = C.CS_MODE_SPE                  ///< Signal Processing Engine mode (PPC)
+	CS_MODE_BOOKE                 = C.CS_MODE_BOOKE                ///< Book-E mode (PPC)
+	CS_MODE_PS                    = C.CS_MODE_PS                   ///< Paired-singles mode (PPC)
+	CS_MODE_M68K_000              = C.CS_MODE_M68K_000             // M68K 68000 mode
+	CS_MODE_M68K_010              = C.CS_MODE_M68K_010             // M68K 68010 mode
+	CS_MODE_M68K_020              = C.CS_MODE_M68K_020             // M68K 68020 mode
+	CS_MODE_M68K_030              = C.CS_MODE_M68K_030             // M68K 68030 mode
+	CS_MODE_M68K_040              = C.CS_MODE_M68K_040             // M68K 68040 mode
+	CS_MODE_M68K_060              = C.CS_MODE_M68K_060             // M68K 68060 mode
+	CS_MODE_BIG_ENDIAN            = C.CS_MODE_BIG_ENDIAN           // big-endian mode
+	CS_MODE_MIPS32                = C.CS_MODE_MIPS32               // Mips32 ISA (Mips)
+	CS_MODE_MIPS64                = C.CS_MODE_MIPS64               // Mips64 ISA (Mips)
+	CS_MODE_M680X_6301            = C.CS_MODE_M680X_6301           // M680X Hitachi 6301,6303 mode
+	CS_MODE_M680X_6309            = C.CS_MODE_M680X_6309           // M680X Hitachi 6309 mode
+	CS_MODE_M680X_6800            = C.CS_MODE_M680X_6800           // M680X Motorola 6800,6802 mode
+	CS_MODE_M680X_6801            = C.CS_MODE_M680X_6801           // M680X Motorola 6801,6803 mode
+	CS_MODE_M680X_6805            = C.CS_MODE_M680X_6805           // M680X Motorola/Freescale 6805 mode
+	CS_MODE_M680X_6808            = C.CS_MODE_M680X_6808           // M680X Motorola/Freescale/NXP 68HC08 mode
+	CS_MODE_M680X_6809            = C.CS_MODE_M680X_6809           // M680X Motorola 6809 mode
+	CS_MODE_M680X_6811            = C.CS_MODE_M680X_6811           // M680X Motorola/Freescale/NXP 68HC11 mode
+	CS_MODE_M680X_CPU12           = C.CS_MODE_M680X_CPU12          // M680X Motorola/Freescale/NXP CPU12 used on M68HC12/HCS12
+	CS_MODE_M680X_HCS08           = C.CS_MODE_M680X_HCS08          // M680X Freescale/NXP HCS08 mode
+	CS_MODE_BPF_CLASSIC           = C.CS_MODE_BPF_CLASSIC          ///< Classic BPF mode (default)
+	CS_MODE_BPF_EXTENDED          = C.CS_MODE_BPF_EXTENDED         ///< Extended BPF mode
+	CS_MODE_RISCV32               = C.CS_MODE_RISCV32              ///< RISCV RV32G
+	CS_MODE_RISCV64               = C.CS_MODE_RISCV64              ///< RISCV RV64G
+	CS_MODE_RISCVC                = C.CS_MODE_RISCVC               ///< RISCV compressed instructure mode
+	CS_MODE_MOS65XX_6502          = C.CS_MODE_MOS65XX_6502         ///< MOS65XXX MOS 6502
+	CS_MODE_MOS65XX_65C02         = C.CS_MODE_MOS65XX_65C02        ///< MOS65XXX WDC 65c02
+	CS_MODE_MOS65XX_W65C02        = C.CS_MODE_MOS65XX_W65C02       ///< MOS65XXX WDC W65c02
+	CS_MODE_MOS65XX_65816         = C.CS_MODE_MOS65XX_65816        ///< MOS65XXX WDC 65816, 8-bit m/x
+	CS_MODE_MOS65XX_65816_LONG_M  = C.CS_MODE_MOS65XX_65816_LONG_M ///< MOS65XXX WDC 65816, 16-bit m, 8-bit x
+	CS_MODE_MOS65XX_65816_LONG_X  = C.CS_MODE_MOS65XX_65816_LONG_X ///< MOS65XXX WDC 65816, 8-bit m, 16-bit x
+	CS_MODE_MOS65XX_65816_LONG_MX = C.CS_MODE_MOS65XX_65816_LONG_MX
+	CS_MODE_SH2                   = C.CS_MODE_SH2         ///< SH2
+	CS_MODE_SH2A                  = C.CS_MODE_SH2A        ///< SH2A
+	CS_MODE_SH3                   = C.CS_MODE_SH3         ///< SH3
+	CS_MODE_SH4                   = C.CS_MODE_SH4         ///< SH4
+	CS_MODE_SH4A                  = C.CS_MODE_SH4A        ///< SH4A
+	CS_MODE_SHFPU                 = C.CS_MODE_SHFPU       ///< w/ FPU
+	CS_MODE_SHDSP                 = C.CS_MODE_SHDSP       ///< w/ DSP
+	CS_MODE_TRICORE_110           = C.CS_MODE_TRICORE_110 ///< Tricore 1.1
+	CS_MODE_TRICORE_120           = C.CS_MODE_TRICORE_120 ///< Tricore 1.2
+	CS_MODE_TRICORE_130           = C.CS_MODE_TRICORE_130 ///< Tricore 1.3
+	CS_MODE_TRICORE_131           = C.CS_MODE_TRICORE_131 ///< Tricore 1.3.1
+	CS_MODE_TRICORE_160           = C.CS_MODE_TRICORE_160 ///< Tricore 1.6
+	CS_MODE_TRICORE_161           = C.CS_MODE_TRICORE_161 ///< Tricore 1.6.1
+	CS_MODE_TRICORE_162           = C.CS_MODE_TRICORE_162 ///< Tricore 1.6.2
 )
 
 const (
 	// Engine Options types
-	CS_OPT_INVALID        = C.CS_OPT_INVALID        // No option specified
-	CS_OPT_SYNTAX         = C.CS_OPT_SYNTAX         // Asssembly output syntax
-	CS_OPT_DETAIL         = C.CS_OPT_DETAIL         // Break down instruction structure into details
-	CS_OPT_MODE           = C.CS_OPT_MODE           // Change engine's mode at run-time
-	CS_OPT_MEM            = C.CS_OPT_MEM            // User-defined memory malloc/calloc/free
-	CS_OPT_SKIPDATA       = C.CS_OPT_SKIPDATA       // Skip data when disassembling. Then engine is in SKIPDATA mode.
-	CS_OPT_SKIPDATA_SETUP = C.CS_OPT_SKIPDATA_SETUP // Setup user-defined function for SKIPDATA option
-	CS_OPT_MNEMONIC       = C.CS_OPT_MNEMONIC       // Customize instruction mnemonic
-	CS_OPT_UNSIGNED       = C.CS_OPT_UNSIGNED       // print immediate operands in unsigned form
+	CS_OPT_INVALID          = C.CS_OPT_INVALID          // No option specified
+	CS_OPT_SYNTAX           = C.CS_OPT_SYNTAX           // Asssembly output syntax
+	CS_OPT_DETAIL           = C.CS_OPT_DETAIL           // Break down instruction structure into details
+	CS_OPT_MODE             = C.CS_OPT_MODE             // Change engine's mode at run-time
+	CS_OPT_MEM              = C.CS_OPT_MEM              // User-defined memory malloc/calloc/free
+	CS_OPT_SKIPDATA         = C.CS_OPT_SKIPDATA         // Skip data when disassembling. Then engine is in SKIPDATA mode.
+	CS_OPT_SKIPDATA_SETUP   = C.CS_OPT_SKIPDATA_SETUP   // Setup user-defined function for SKIPDATA option
+	CS_OPT_MNEMONIC         = C.CS_OPT_MNEMONIC         // Customize instruction mnemonic
+	CS_OPT_UNSIGNED         = C.CS_OPT_UNSIGNED         // print immediate operands in unsigned form
+	CS_OPT_NO_BRANCH_OFFSET = C.CS_OPT_NO_BRANCH_OFFSET ///< ARM, prints branch immediates without offset
 )
 
 const (
@@ -95,6 +130,7 @@ const (
 	CS_OPT_SYNTAX_ATT       = C.CS_OPT_SYNTAX_ATT       // X86 ATT asm syntax (CS_OPT_SYNTAX).
 	CS_OPT_SYNTAX_NOREGNAME = C.CS_OPT_SYNTAX_NOREGNAME // Prints register name with only number (CS_OPT_SYNTAX)
 	CS_OPT_SYNTAX_MASM      = C.CS_OPT_SYNTAX_MASM      // X86 Intel Masm syntax (CS_OPT_SYNTAX).
+	CS_OPT_SYNTAX_MOTOROLA  = C.CS_OPT_SYNTAX_MOTOROLA  ///< MOS65XX use $ as hex prefix
 )
 
 const (

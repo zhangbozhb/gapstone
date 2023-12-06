@@ -32,6 +32,7 @@ type ArmInstruction struct {
 	CC          uint
 	UpdateFlags bool
 	Writeback   bool
+	postIndex   bool
 	MemBarrier  int
 	Operands    []ArmOperand
 }

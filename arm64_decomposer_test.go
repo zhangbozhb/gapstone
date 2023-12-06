@@ -79,9 +79,6 @@ func arm64InsnDetail(insn Instruction, engine *Engine, buf *bytes.Buffer) {
 		if op.Vas != ARM64_VAS_INVALID {
 			fmt.Fprintf(buf, "\t\t\tVector Arrangement Specifier: 0x%x\n", op.Vas)
 		}
-		if op.Vess != ARM64_VESS_INVALID {
-			fmt.Fprintf(buf, "\t\t\tVector Element Size Specifier: %v\n", op.Vess)
-		}
 		if op.VectorIndex != -1 {
 			fmt.Fprintf(buf, "\t\t\tVector Index: %v\n", op.VectorIndex)
 		}
